@@ -1,0 +1,31 @@
+{{ define "main"}}
+  <div class="post-header">
+    <h1>{{ .Title }}</h1>
+    {{ if not .Date.IsZero }}
+    <!-- date -->
+    {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "January 2, 2006"}}
+    <p class="date">{{ .Date.Format $singlePageDateFormat }}</p>
+    {{ end }}
+    <!-- end date -->
+  </div>
+  <!-- tags -->
+  {{ if .Param "tags" }}
+  <div id="tags">
+    <ul>
+      {{ range .Param "tags" }}
+        {{ $name := . }}
+        {{ with $.Site.GetPage (printf "/tags/%s" ($name | urlize)) }}
+          <li><a href="{{ .Permalink }}">{{ $name }}</a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  <!-- end tags -->
+  <!-- content -->
+  <div id="contentBody">
+    {{ .Content }}
+  </div>
+  <!-- end content -->
+  {{ partial "footer.html" . }}
+{{ end }}
