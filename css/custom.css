@@ -1,0 +1,68 @@
+:root {
+    --main-color: #777;
+    --main-hover: #999;
+    --author-color: #466686;
+}
+
+body {
+    color: var(--main-color);
+}
+
+mark {
+    color: var(--main-color);
+}
+
+a:link {
+    color: var(--main-color);
+}
+
+a:visited {
+    color: var(--main-color);
+}
+
+a:hover {
+    color: var(--main-hover);
+}
+  
+a:active {
+    color: var(--main-color);
+}
+
+nav ul {
+    font-size: 20px;
+}
+
+nav li {
+    margin: 0 12px;
+}
+
+.author {
+    color: var(--author-color);
+}
+
+#searchBox #searchBoxInput {
+    color: #333;
+}
+
+#searchResults {
+    position: inherit;
+}
+
+/* self-defined */
+#quote {
+    font-style: italic;
+}
+
+.a-no-underscored {
+    text-decoration: none;
+}
+
+.post-header {
+    padding: 2em 0;
+    margin: -20px -20px 0 -20px;
+    background-color: #dfdfdf;
+    color: #555;
+}
+.post-header .date {
+    font-weight: 500;
+}
